@@ -2,26 +2,108 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>สพ.ญ. วรดา เหล็กยัง - Senior Veterinarian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สพ.ญ. วรดา เหล็กยัง | Veterinarian Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@400;600&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        /* สไตล์หลักที่ออกแบบมาเพื่อความอบอุ่น */
-        body { background-color: #FFF9F2; color: #4A3728; font-family: 'Sarabun', sans-serif; margin: 0; }
-        .header { background-color: #D2B48C; color: white; text-align: center; padding: 50px 20px; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 6px solid #FFF; object-fit: cover; }
-        .container { max-width: 800px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 20px; shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { margin: 10px 0; }
-        .section-title { border-left: 5px solid #8D6E63; padding-left: 15px; color: #5D4037; margin-top: 30px; }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <img src="https://path-to-your-generated-image.jpg" class="profile-img" alt="วรดา เหล็กยัง">
-        <h1>สพ.ญ. วรดา เหล็กยัง</h1>
-        <p>รหัสแพทย์: 6650101419 | ประสบการณ์กว่า 7 ปี</p>
-    </div>
-    <div class="container">
-        <h2 class="section-title">เกี่ยวกับฉัน</h2>
-        <p>สัตวแพทย์ผู้เชี่ยวชาญด้านศัลยกรรมและอายุรกรรมสัตว์เล็ก มีความชำนาญในการวินิจฉัยโรคซับซ้อนและการดูแลสัตว์ป่วยวิกฤต...</p>
-        </div>
-</body>
-</html>
+        :root {
+            --bg-cream: #FFFDF5;
+            --warm-latte: #D2B48C;
+            --dark-choco: #4B3621;
+            --white: #FFFFFF;
+            --soft-brown: #8D755D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--dark-choco);
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--warm-latte);
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+
+        .profile-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid var(--bg-cream);
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Pridi', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(75, 54, 33, 0.05);
+        }
+
+        h2 {
+            font-family: 'Pridi', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 6px solid var(--warm-latte);
+            padding-left: 15px;
+            color: var(--dark-choco);
+        }
+
+        /* Experience Table */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg-cream);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
