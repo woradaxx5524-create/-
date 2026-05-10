@@ -3,107 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สพ.ญ. วรดา เหล็กยัง | Veterinarian Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@400;600&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <title>Dr. Worada | Your Friendly Vet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Mitr:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-cream: #FFFDF5;
-            --warm-latte: #D2B48C;
-            --dark-choco: #4B3621;
-            --white: #FFFFFF;
-            --soft-brown: #8D755D;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --bg-color: #FDF9F3; /* ขาวนวล */
+            --card-white: #FFFFFF;
+            --primary-brown: #6D4C41; /* น้ำตาลเข้ม */
+            --accent-brown: #A1887F; /* น้ำตาลอ่อน */
+            --warm-highlight: #F5EBE0;
         }
 
         body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--dark-choco);
-            line-height: 1.6;
+            font-family: 'Kanit', sans-serif;
+            background-color: var(--bg-color);
+            color: #4E342E;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Header Section */
-        header {
-            background-color: var(--warm-latte);
-            padding: 80px 20px;
+        /* ส่วนหัวที่ดูเป็นมิตร */
+        .header {
+            background-color: var(--warm-highlight);
             text-align: center;
-            color: var(--white);
-            clip-path: ellipse(150% 100% at 50% 0%);
+            padding: 50px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
         }
 
-        .profile-container {
+        .profile-wrapper {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 20px;
+            display: inline-block;
         }
 
         .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 8px solid var(--bg-cream);
+            width: 200px;
+            height: 200px;
+            border-radius: 40px; /* ทรงมนๆ ไม่กลมสนิทจะดูโมเดิร์นกว่า */
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 6px solid white;
+            box-shadow: 0 10px 20px rgba(109, 76, 65, 0.15);
         }
 
-        header h1 {
-            font-family: 'Pridi', serif;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .status-badge {
+            position: absolute;
+            bottom: 10px;
+            right: -10px;
+            background: #81C784;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+        h1 { font-family: 'Mitr', sans-serif; color: var(--primary-brown); margin: 20px 0 5px 0; }
+        .sub-title { font-size: 1.1em; color: var(--accent-brown); margin-bottom: 20px; }
 
-        /* Main Content */
+        /* การจัดหน้าแบบ Card */
         .container {
-            max-width: 900px;
-            margin: -40px auto 60px;
+            max-width: 700px;
+            margin: -30px auto 50px auto;
             padding: 0 20px;
         }
 
-        section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(75, 54, 33, 0.05);
+        .info-card {
+            background: var(--card-white);
+            padding: 35px;
+            border-radius: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-family: 'Pridi', serif;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            border-left: 6px solid var(--warm-latte);
-            padding-left: 15px;
-            color: var(--dark-choco);
+            font-size: 1.3em;
+            color: var(--primary-brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed var(--warm-highlight);
+            padding-bottom: 10px;
         }
 
-        /* Experience Table */
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .skill-card {
-            background: var(--bg-cream);
-            padding: 20px;
+        .tag {
+            background: var(--warm-highlight);
+            color: var(--primary-brown);
+            padding: 8px 18px;
             border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 400;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
+        .contact-list {
+            list-style: none;
+            padding: 0;
         }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-text {
+            color: var(--primary-brown);
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding-bottom: 40px;
+            color: var(--accent-brown);
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="profile-wrapper">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop" alt="Dr. Worada" class="profile-img">
+            <span class="status-badge">เชี่ยวชาญ 7+ ปี</span>
+        </div>
+        <h1>สพ.ญ. วรดา เหล็กยัง</h1>
+        <div class="sub-title">รหัสแพทย์: 6650101419</div>
+    </div>
+
+    <div class="container">
+        <div class="info-card">
+            <h2>🐾 สวัสดีค่ะ หมอวรดานะคะ</h2>
+            <p>หมอเชื่อว่าสัตว์เลี้ยงคือสมาชิกในครอบครัวค่ะ ด้วยประสบการณ์กว่า 7 ปีในโรงพยาบาลสัตว์ หมอจึงมุ่งเน้นการรักษาที่นุ่มนวลและแม่นยำ เพื่อให้เด็กๆ กลับไปร่าเริงได้เร็วที่สุด ยินดีที่ได้ดูแลทุกคนค่ะ</p>
+        </div>
+
+        <div class="info-card">
+            <h2>✨ ความชำนาญการ</h2>
+            <div class="skills-container">
+                <span class="tag">ศัลยกรรมเนื้อเยื่ออ่อน</span>
+                <span class="tag">อายุรกรรมโรคแมว</span>
+                <span class="tag">โภชนาการสัตว์เลี้ยง</span>
+                <span class="tag">การแปลผล Lab</span>
+                <span class="tag">ตรวจสุขภาพเชิงป้องกัน</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h2>🏥 ประวัติการทำงาน</h2>
+            <ul class="contact-list">
+                <li>📍 <span class="highlight-text">2019 - ปัจจุบัน:</span> สัตวแพทย์อาวุโส แผนกศัลยกรรม</li>
+                <li>📍 <span class="highlight-text">2017 - 2019:</span> สัตวแพทย์ประจำบ้าน (Resident)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        ออกแบบเพื่อดูแลเพื่อนสี่ขาโดยคุณหมอวรดา <br>
+        &copy; 2026 Veterinary Professional Profile
+    </footer>
+
+</body>
+</html>
