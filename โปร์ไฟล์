@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สพ.ญ. วรดา เหล็กยัง - Resume</title>
+    <style>
+        /* CSS Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif; /* แนะนำให้ใช้ฟอนต์ไทยที่ดูเป็นทางการและอ่านง่าย */
+        }
+
+        body {
+            background-color: #FDF9F3; /* สีขาวนวล Warm Cream */
+            color: #4B3621; /* สีน้ำตาลเข้มสำหรับข้อความ */
+            line-height: 1.6;
+        }
+
+        /* Container สำหรับจัดกลางหน้า */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative; /* สำหรับจัดวางลายเท้าแมว */
+        }
+
+        /* --- Navigation Bar --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #E5D3B3; /* เส้นคั่นสีน้ำตาลอ่อน */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #254E35; /* สีเขียวโลโก้เกษตร */
+        }
+        
+        /* จำลองสัญลักษณ์โลโก้ */
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #254E35;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4B3621;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #EBDCC5; /* สีน้ำตาลอ่อนเวลากด/ชี้ */
+        }
+
+        /* --- Main Profile Section --- */
+        .profile-card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(75, 54, 33, 0.05); /* เงาบางๆ */
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .profile-info h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2em;
+            color: #6F4E37; /* สีน้ำตาลกลาง */
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .license {
+            font-size: 0.85em;
+            color: #8C7355;
+            margin-bottom: 20px;
+        }
+
+        /* --- Section Titles with Icons --- */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #4B3621;
+            position: relative;
+        }
+
+        /* เส้นขีดข้างหัวข้อ */
+        .section-header::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: #E5D3B3;
+            margin-left: 15px;
+        }
+
+        .icon-paw {
+            color: #D2B48C; /* สีน้ำตาลแทน */
+        }
+
+        /* --- Content Layout --- */
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* แบ่งสองคอลัมน์ */
+            gap: 30px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .profile-content h3 {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .profile-content p {
+            font-size: 0.9em;
+            color: #6F4E37;
+            margin-bottom: 15px;
+        }
+
+        /* --- Timeline (Experience) --- */
+        .timeline {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background-color: #E5D3B3;
+        }
+
+        .timeline li {
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background-color: #A67B5B; /* จุดสีน้ำตาลเข้ม */
+            border-radius: 50%;
+        }
+
+        /* --- Tags (Skills) --- */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: #EBDCC5; /* สีน้ำตาลอ่อน */
+            color: #4B3621;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* จำลองไอคอนใน Tag */
+        .tag-icon {
+            font-size: 1em;
+        }
+
+        /* --- Decorative Paw Prints (Background) --- */
+        .bg-paw {
+            position: absolute;
+            color: #F3E5DC; /* สีน้ำตาลครีมจางๆ */
+            font-size: 10rem;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        
+        .bg-paw-1 { top: 150px; left: -50px; transform: rotate(-15deg); }
+        .bg-paw-2 { top: 300px; right: -50px; transform: rotate(15deg); }
+
+        /* --- Font (Using Google Fonts) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="bg-paw bg-paw-1">🐾</div>
+    <div class="bg-paw bg-paw-2">🐾</div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">KU</div> <div>KASETSART<br><span style="font-size:0.8em; font-weight:normal;">ANIMAL HOSPITAL</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile" class="active">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="profile-card" id="profile">
+        
+        <div class="profile-pic-container">
+            <img src="your-photo.jpg" alt="สพ.ญ. วรดา เหล็กยัง">
+            </div>
+
+        <div class="profile-info">
+            <h1>สพ.ญ. วรดา เหล็กยัง</h1>
+            <h2>สัตวแพทย์ผู้ชำนาญการสัตว์เล็ก (7 ปี)</h2>
+            <p class="license">รหัสวิชาชีพ: 6650101419</p>
+        </div>
+
+        <div class="profile-content">
+            
+            <div class="left-col">
+                <div class="section-header">
+                    <span class="icon-paw">🐾</span>
+                    About Me
+                </div>
+                <h3>คุณหมอผู้เป็นมิตรและรักสัตว์...</h3>
+                <p>พร้อมมอบการดูแลที่อบอุ่นและใส่ใจ ใส่ใจในทุกรายละเอียดเพื่อสุขภาพที่ดีของสัตว์เลี้ยงตัวโปรดของคุณ</p>
+                
+                <h3>Skills</h3>
+                <div class="tags-container">
+                    <div class="tag"><span class="tag-icon">🩺</span> Veterinary</div>
+                    <div class="tag"><span class="tag-icon">🐱</span> Cat</div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="section-header">
+                    Experience
+                </div>
+                <ul class="timeline">
+                    <li>อายุรกรรมสัตว์เล็ก...</li>
+                    <li>ศัลยกรรมเนื้อเยื่ออ่อน...</li>
+                </ul>
+
+                <h3>Skills</h3>
+                <div class="tags-container">
+                    <div class="tag"><span class="tag-icon">🏥</span> อายุรกรรม</div>
+                    <div class="tag"><span class="tag-icon">✂️</span> ผ่าตัด</div>
+                    <div class="tag"><span class="tag-icon">🤝</span> ให้คำปรึกษา</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
