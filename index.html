@@ -2,214 +2,26 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สพ.ญ. วรดา เหล็กยัง | Happy Paws</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>สพ.ญ. วรดา เหล็กยัง - Senior Veterinarian</title>
     <style>
-        :root {
-            --warm-white: #FDFBF7; /* ขาวนวลแบบมินิมอล */
-            --creamy-beige: #F5EFE6; /* ครีมน้ำตาลอ่อน */
-            --soft-brown: #A67B5B; /* น้ำตาลนุ่มนวล */
-            --deep-brown: #4B3621; /* น้ำตาลเข้ม/ช็อกโกแลต */
-            --text-gray: #555;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Sarabun', sans-serif; }
-
-        body {
-            background-color: var(--warm-white);
-            color: var(--deep-brown);
-            line-height: 1.8;
-        }
-
-        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
-
-        /* ส่วนหัว */
-        header {
-            text-align: center;
-            padding-bottom: 40px;
-        }
-        .logo-text { 
-            font-size: 1.5rem; 
-            font-weight: 700; 
-            letter-spacing: 1px;
-            color: var(--soft-brown);
-        }
-
-        /* การ์ดโปรไฟล์ */
-        .profile-card {
-            background: #ffffff;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(75, 54, 33, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 40px;
-            border: 1px solid var(--creamy-beige);
-        }
-
-        .profile-pic-wrapper {
-            width: 280px;
-            height: 380px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease; /* เพิ่มเอฟเฟกต์เวลาเอาเมาส์วาง */
-        }
-
-        .profile-pic-wrapper:hover {
-            transform: scale(1.02);
-        }
-
-        .profile-pic-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .doctor-name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: var(--deep-brown);
-        }
-
-        .license-no {
-            font-size: 0.95rem;
-            color: var(--soft-brown);
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .quote {
-            max-width: 600px;
-            text-align: center;
-            font-style: italic;
-            color: var(--text-gray);
-            margin-bottom: 40px;
-        }
-
-        /* ส่วนข้อมูลบริการ */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .info-box {
-            background: var(--warm-white);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid var(--creamy-beige);
-        }
-
-        .info-box h3 {
-            color: var(--soft-brown);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-box ul { list-style: none; }
-        .info-box li {
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            color: var(--text-gray);
-            display: flex;
-            align-items: start;
-            gap: 8px;
-        }
-
-        /* ติดต่อ */
-        .footer-contact {
-            margin-top: 50px;
-            text-align: center;
-            width: 100%;
-            padding-top: 30px;
-            border-top: 1px dashed var(--creamy-beige);
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-        }
-
-        .contact-item b { color: var(--soft-brown); }
-
-        @media (max-width: 650px) {
-            .info-grid { grid-template-columns: 1fr; }
-            .doctor-name { font-size: 1.8rem; }
-        }
+        /* สไตล์หลักที่ออกแบบมาเพื่อความอบอุ่น */
+        body { background-color: #FFF9F2; color: #4A3728; font-family: 'Sarabun', sans-serif; margin: 0; }
+        .header { background-color: #D2B48C; color: white; text-align: center; padding: 50px 20px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 6px solid #FFF; object-fit: cover; }
+        .container { max-width: 800px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 20px; shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { margin: 10px 0; }
+        .section-title { border-left: 5px solid #8D6E63; padding-left: 15px; color: #5D4037; margin-top: 30px; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <div class="logo-text">HAPPY PAWS</div>
-        <div style="font-size: 0.8rem; color: var(--soft-brown);">PET CLINIC & SHOP</div>
-    </header>
-
-    <div class="profile-card">
-        <div class="profile-pic-wrapper">
-            <a href="https://www.google.com" target="_blank">
-                <img src="JUne.jpg" alt="สพ.ญ. วรดา เหล็กยัง (คุณหมอจูน)">
-            </a>
-        </div>
-
-        <h1 class="doctor-name">สพ.ญ. วรดา เหล็กยัง</h1>
-        <div class="license-no">เลขที่ใบประกอบวิชาชีพ: 6650101419</div>
-        
-        <p class="quote">
-            "เพราะทุกชีวิตสำคัญ... เราจึงดูแลด้วยหัวใจและมาตรฐานวิชาชีพที่สูงสุด 
-            เพื่อให้เพื่อนสี่ขาของคุณกลับมาแข็งแรงและมีความสุขอีกครั้ง"
-        </p>
-
-        <div class="info-grid">
-            <div class="info-box">
-                <h3>🏥 Professional Services</h3>
-                <ul>
-                    <li>• ศูนย์อายุรกรรมและศัลยกรรมสัตว์เล็ก</li>
-                    <li>• โปรแกรมสุขภาพและวัคซีนตามช่วงวัย</li>
-                    <li>• วินิจฉัยด้วยชุดตรวจมาตรฐานสากล</li>
-                    <li>• ดูแลเคสฉุกเฉินและสัตว์ป่วยวิกฤต</li>
-                </ul>
-            </div>
-            <div class="info-box">
-                <h3>🛒 Happy Paws Shop</h3>
-                <ul>
-                    <li>• อาหารประกอบการรักษาโรค (Prescription Diet)</li>
-                    <li>• เวชภัณฑ์และผลิตภัณฑ์ดูแลผิวหนังสูตรอ่อนโยน</li>
-                    <li>• อุปกรณ์เสริมทักษะและของใช้เกรดพรีเมียม</li>
-                    <li>• วิตามินและอาหารเสริมนำเข้า</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-contact">
-            <div class="contact-info">
-                <div class="contact-item"><b>Line:</b> @HappyPawsClinic</div>
-                <div class="contact-item"><b>Tel:</b> 02-xxx-xxxx</div>
-                <div class="contact-item"><b>Location:</b> สาขาใกล้บ้านคุณ</div>
-            </div>
-        </div>
+    <div class="header">
+        <img src="https://path-to-your-generated-image.jpg" class="profile-img" alt="วรดา เหล็กยัง">
+        <h1>สพ.ญ. วรดา เหล็กยัง</h1>
+        <p>รหัสแพทย์: 6650101419 | ประสบการณ์กว่า 7 ปี</p>
     </div>
-
-    <footer style="text-align: center; margin-top: 40px; font-size: 0.8rem; color: var(--soft-brown); opacity: 0.7;">
-        © 2026 Happy Paws PET CLINIC & SHOP. All Rights Reserved.
-    </footer>
-</div>
-
+    <div class="container">
+        <h2 class="section-title">เกี่ยวกับฉัน</h2>
+        <p>สัตวแพทย์ผู้เชี่ยวชาญด้านศัลยกรรมและอายุรกรรมสัตว์เล็ก มีความชำนาญในการวินิจฉัยโรคซับซ้อนและการดูแลสัตว์ป่วยวิกฤต...</p>
+        </div>
 </body>
 </html>
