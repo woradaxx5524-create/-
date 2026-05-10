@@ -3,145 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สพ.ญ. วรดา เหล็กยัง | Happy Paws PET CLINIC & SHOP</title>
+    <title>สพ.ญ. วรดา เหล็กยัง | Happy Paws</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --warm-white: #FDF9F3;
-            --creamy: #FFFDF5;
-            --latte: #D2B48C;
-            --chocolate: #4B3621;
-            --soft-brown: #A67B5B;
-            --accent-gold: #C5A059;
-            --vet-green: #00796b; /* สีเขียวเข้มจากชุดสครับในรูป */
+            --warm-white: #FDFBF7; /* ขาวนวลแบบมินิมอล */
+            --creamy-beige: #F5EFE6; /* ครีมน้ำตาลอ่อน */
+            --soft-brown: #A67B5B; /* น้ำตาลนุ่มนวล */
+            --deep-brown: #4B3621; /* น้ำตาลเข้ม/ช็อกโกแลต */
+            --text-gray: #555;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Sarabun', sans-serif; }
 
         body {
             background-color: var(--warm-white);
-            color: var(--chocolate);
-            line-height: 1.7;
+            color: var(--deep-brown);
+            line-height: 1.8;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; }
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
 
+        /* ส่วนหัว */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 0;
-            border-bottom: 2px solid #EBDCC5;
-        }
-
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-text { font-weight: bold; line-height: 1.2; }
-        .logo-text span { color: var(--accent-gold); font-size: 1.2em; }
-
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: var(--chocolate); font-size: 0.95em; font-weight: 500; }
-        nav a:hover { color: var(--soft-brown); }
-
-        .profile-card {
-            background: white;
-            border-radius: 40px;
-            padding: 50px 40px;
-            margin-top: 40px;
-            box-shadow: 0 15px 40px rgba(75, 54, 33, 0.08);
             text-align: center;
+            padding-bottom: 40px;
+        }
+        .logo-text { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            letter-spacing: 1px;
+            color: var(--soft-brown);
         }
 
-        .profile-pic-container {
-            width: 320px; /* ปรับขนาดให้เข้ากับรูปทรงแนวตั้ง */
-            height: 420px;
-            margin: 0 auto 30px;
+        /* การ์ดโปรไฟล์ */
+        .profile-card {
+            background: #ffffff;
             border-radius: 30px;
             overflow: hidden;
-            border: 8px solid var(--creamy);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(75, 54, 33, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 40px;
+            border: 1px solid var(--creamy-beige);
         }
 
-        .profile-pic-container img {
+        .profile-pic-wrapper {
+            width: 280px;
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .profile-pic-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top; /* เน้นใบหน้าคุณหมอ */
         }
 
-        .profile-info h1 { font-size: 2.5em; margin-bottom: 10px; color: var(--chocolate); }
-        .profile-info .badge {
-            display: inline-block;
-            background: var(--vet-green); /* เปลี่ยนสี badge ให้เข้ากับชุด */
-            color: white;
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-size: 0.9em;
-            margin-bottom: 15px;
+        .doctor-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--deep-brown);
         }
 
-        .stats-bar {
-            display: flex;
-            justify-content: space-around;
-            background: var(--creamy);
-            padding: 20px;
-            border-radius: 20px;
-            margin: 30px 0;
+        .license-no {
+            font-size: 0.95rem;
+            color: var(--soft-brown);
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
-        .stat-item b { font-size: 1.5em; color: var(--soft-brown); display: block; }
-        .stat-item span { font-size: 0.85em; color: var(--chocolate); }
+        .quote {
+            max-width: 600px;
+            text-align: center;
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
 
-        .grid-content {
+        /* ส่วนข้อมูลบริการ */
+        .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            text-align: left;
-            margin-top: 40px;
+            gap: 30px;
+            width: 100%;
+            margin-top: 20px;
         }
 
-        .section-title {
-            font-size: 1.2em;
-            font-weight: bold;
+        .info-box {
+            background: var(--warm-white);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--creamy-beige);
+        }
+
+        .info-box h3 {
+            color: var(--soft-brown);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--creamy);
-            padding-bottom: 8px;
         }
 
-        .list-item { list-style: none; }
-        .list-item li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            font-size: 0.95em;
-        }
-
-        .list-item li::before {
-            content: '🐾';
-            position: absolute;
-            left: 0;
-            font-size: 0.8em;
-        }
-
-        .contact-box {
-            background: var(--chocolate);
-            color: var(--creamy);
-            padding: 30px;
-            border-radius: 25px;
-            margin-top: 40px;
+        .info-box ul { list-style: none; }
+        .info-box li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-gray);
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: start;
+            gap: 8px;
         }
 
-        .contact-item { text-align: center; font-size: 0.9em; }
+        /* ติดต่อ */
+        .footer-contact {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+            padding-top: 30px;
+            border-top: 1px dashed var(--creamy-beige);
+        }
 
-        @media (max-width: 768px) {
-            .grid-content { grid-template-columns: 1fr; }
-            .profile-pic-container { width: 100%; max-width: 300px; }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .contact-item b { color: var(--soft-brown); }
+
+        @media (max-width: 650px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .doctor-name { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -149,76 +151,37 @@
 
 <div class="container">
     <header>
-        <div class="logo">
-            <div class="logo-text">
-                <span>Happy Paws</span><br>
-                PET CLINIC & SHOP
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">หน้าหลัก</a></li>
-                <li><a href="#">บริการของเรา</a></li>
-                <li><a href="#">สินค้าใน Shop</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
+        <div class="logo-text">HAPPY PAWS</div>
+        <div style="font-size: 0.8rem; color: var(--soft-brown);">PET CLINIC & SHOP</div>
     </header>
 
     <div class="profile-card">
-        <div class="profile-pic-container">
+        <div class="profile-pic-wrapper">
             <img src="https://raw.githubusercontent.com/otammie/image-repo/main/vet-doctor-custom.png" alt="สพ.ญ. วรดา เหล็กยัง">
         </div>
 
-        <div class="profile-info">
-            <span class="badge">คุณหมอเฉพาะทาง ประสบการณ์กว่า 7 ปี</span>
-            <h1>สพ.ญ. วรดา เหล็กยัง</h1>
-            <p style="color: var(--soft-brown); font-weight: bold; letter-spacing: 1px;">เลขที่ใบประกอบวิชาชีพ: 6650101419</p>
-            <p style="max-width: 600px; margin: 20px auto; font-size: 1.05em; font-style: italic;">
-                "ดูแลสัตว์เลี้ยงของคุณด้วยความรักและความเชี่ยวชาญ ครบจบในที่เดียว 
-                ทั้งการรักษาที่มีคุณภาพและสินค้าพรีเมียมสำหรับเพื่อนสี่ขา"
-            </p>
-        </div>
+        <h1 class="doctor-name">สพ.ญ. วรดา เหล็กยัง</h1>
+        <div class="license-no">เลขที่ใบประกอบวิชาชีพ: 6650101419</div>
+        
+        <p class="quote">
+            "เพราะทุกชีวิตสำคัญ... เราจึงดูแลด้วยหัวใจและมาตรฐานวิชาชีพที่สูงสุด 
+            เพื่อให้เพื่อนสี่ขาของคุณกลับมาแข็งแรงและมีความสุขอีกครั้ง"
+        </p>
 
-        <div class="stats-bar">
-            <div class="stat-item"><b>7+ Years</b><span>ประสบการณ์</span></div>
-            <div class="stat-item"><b>15,000+</b><span>เคสที่สำเร็จ</span></div>
-            <div class="stat-item"><b>Premium</b><span>Products in Shop</span></div>
-        </div>
-
-        <div class="grid-content">
-            <div class="col">
-                <div class="section-title">🏥 Professional Services</div>
-                <ul class="list-item">
-                    <li><b>ศูนย์อายุรกรรมและศัลยกรรม:</b> รักษาและผ่าตัดด้วยมาตรฐานสากล</li>
-                    <li><b>ตรวจเช็คสุขภาพ:</b> วัคซีน โปรแกรมถ่ายพยาธิ และตรวจเลือด</li>
-                    <li><b>วินิจฉัยพิเศษ:</b> อัลตราซาวด์และตรวจหัวใจด้วยเทคนิคเฉพาะ</li>
-                    <li><b>Emergency Case:</b> พร้อมดูแลเคสฉุกเฉินตลอดเวลาทำการ</li>
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>🏥 Professional Services</h3>
+                <ul>
+                    <li>• ศูนย์อายุรกรรมและศัลยกรรมสัตว์เล็ก</li>
+                    <li>• โปรแกรมสุขภาพและวัคซีนตามช่วงวัย</li>
+                    <li>• วินิจฉัยด้วยชุดตรวจมาตรฐานสากล</li>
+                    <li>• ดูแลเคสฉุกเฉินและสัตว์ป่วยวิกฤต</li>
                 </ul>
             </div>
-
-            <div class="col">
-                <div class="section-title">🛒 Happy Paws Shop</div>
-                <ul class="list-item">
-                    <li><b>Prescription Diet:</b> อาหารเฉพาะโรคคุณภาพสูง</li>
-                    <li><b>Grooming & Care:</b> ผลิตภัณฑ์ดูแลผิวหนังและขนสูตรอ่อนโยน</li>
-                    <li><b>Supplements:</b> วิตามินเสริมสร้างภูมิคุ้มกันและบำรุงข้อ</li>
-                    <li><b>Pet Accessories:</b> อุปกรณ์สำหรับสัตว์เลี้ยงคัดสรรโดยคุณหมอ</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="contact-box">
-            <div class="contact-item">📍 <b>Happy Paws PET CLINIC & SHOP</b><br>สาขาใกล้บ้านคุณ</div>
-            <div class="contact-item">📞 <b>Contact Us</b><br>02-xxx-xxxx</div>
-            <div class="contact-item">💬 <b>Line ID</b><br>@HappyPawsClinic</div>
-        </div>
-    </div>
-    
-    <p style="text-align: center; margin-top: 30px; font-size: 0.85em; color: var(--soft-brown);">
-        © 2026 Happy Paws PET CLINIC & SHOP. All Rights Reserved.
-    </p>
-</div>
-
-</body>
-</html>
+            <div class="info-box">
+                <h3>🛒 Happy Paws Shop</h3>
+                <ul>
+                    <li>• อาหารประกอบการรักษาโรค (Prescription Diet)</li>
+                    <li>• เวชภัณฑ์และผลิตภัณฑ์ดูแลผิวหนังสูตรอ่อนโยน</li>
+                    <li>• อุปกรณ์เสริมทักษะและของใช้เกรดพรีเมียม</li>
+                    <li>• ว
