@@ -3,219 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สพ.ญ. วรดา เหล็กยัง | Happy Paws PET CLINIC & SHOP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>สพ.ญ. ธนวรรณ (Dr. Thanawan) | สัตวแพทย์ผู้รักสัตว์</title>
     <style>
-        :root {
-            --warm-white: #FDF9F3;
-            --creamy: #FFFDF5;
-            --latte: #D2B48C;
-            --chocolate: #4B3621;
-            --soft-brown: #A67B5B;
-            --accent-gold: #C5A059;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Sarabun', sans-serif; }
-
+        /* สไตล์พื้นฐาน: กำหนดฟอนต์ สี และการจัดหน้า */
         body {
-            background-color: var(--warm-white);
-            color: var(--chocolate);
-            line-height: 1.7;
+            font-family: 'Sarabun', sans-serif; /* แนะนำให้ใช้ฟอนต์ภาษาไทยที่อ่านง่าย */
+            background-color: #f4f4f9; /* สีพื้นหลังอ่อนๆ */
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; }
-
+        /* ส่วนหัว (Header) */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 0;
-            border-bottom: 2px solid #EBDCC5;
-        }
-
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-text { font-weight: bold; line-height: 1.2; }
-        .logo-text span { color: var(--accent-gold); font-size: 1.2em; }
-
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: var(--chocolate); font-size: 0.95em; font-weight: 500; }
-        nav a:hover { color: var(--soft-brown); }
-
-        .profile-card {
-            background: white;
-            border-radius: 40px;
-            padding: 50px 40px;
-            margin-top: 40px;
-            box-shadow: 0 15px 40px rgba(75, 54, 33, 0.08);
+            background-color: #00796b; /* สีเขียวเข้ม เข้ากับชุดสครับ */
+            color: white;
+            padding: 2rem 0;
             text-align: center;
         }
 
-        .profile-pic-container {
-            width: 280px;
-            height: 380px;
-            margin: 0 auto 30px;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 8px solid var(--creamy);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
         }
 
-        .profile-pic-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        .profile-info h1 { font-size: 2.5em; margin-bottom: 10px; color: var(--chocolate); }
-        .profile-info .badge {
-            display: inline-block;
-            background: var(--latte);
-            color: white;
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .stats-bar {
+        /* คอนเทนเนอร์หลัก */
+        .container {
+            max-width: 900px; /* จำกัดความกว้างเพื่อให้อ่านง่าย */
+            margin: 2rem auto;
+            padding: 0 1rem;
             display: flex;
-            justify-content: space-around;
-            background: var(--creamy);
-            padding: 20px;
-            border-radius: 20px;
-            margin: 30px 0;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .stat-item b { font-size: 1.5em; color: var(--soft-brown); display: block; }
-        .stat-item span { font-size: 0.85em; color: var(--chocolate); }
-
-        .grid-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            text-align: left;
-            margin-top: 40px;
-        }
-
-        .section-title {
-            font-size: 1.2em;
-            font-weight: bold;
+        /* ส่วนโปรไฟล์ (รวมรูปภาพและชื่อ) */
+        .profile-section {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--creamy);
-            padding-bottom: 8px;
+            gap: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
         }
 
-        .list-item { list-style: none; }
-        .list-item li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            font-size: 0.95em;
+        .profile-section img {
+            max-width: 300px; /* ปรับขนาดรูปภาพ */
+            height: auto;
+            border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+            border: 5px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .list-item li::before {
-            content: '🐾';
-            position: absolute;
-            left: 0;
-            font-size: 0.8em;
+        .profile-info {
+            flex: 1;
         }
 
-        .contact-box {
-            background: var(--chocolate);
-            color: var(--creamy);
-            padding: 30px;
-            border-radius: 25px;
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
+        .profile-info h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #00796b;
         }
 
-        .contact-item { text-align: center; font-size: 0.9em; }
+        .profile-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
 
-        @media (max-width: 768px) {
-            .grid-content { grid-template-columns: 1fr; }
+        /* ส่วนเนื้อหาอื่นๆ (เช่น ประวัติ, บริการ, ติดต่อ) */
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h3 {
+            margin-top: 0;
+            color: #00796b;
+            border-bottom: 2px solid #00796b; /* เพิ่มเส้นใต้หัวข้อ */
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .content-section p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            list-style-type: none; /* เอาจุดหน้าหัวข้อออก */
+            padding: 0;
+        }
+
+        .content-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee; /* เส้นแบ่งรายการ */
+        }
+
+        .content-section li:last-child {
+            border-bottom: none; /* เอาเส้นแบ่งรายการสุดท้ายออก */
+        }
+
+        /* ส่วนท้าย (Footer) */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* สไตล์สำหรับลิงก์ติดต่อ */
+        .contact-link {
+            display: inline-block;
+            margin: 0 1rem;
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ปรับสไตล์สำหรับหน้าจอขนาดเล็ก (เช่น มือถือ) */
+        @media (max-width: 600px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-section img {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
-        <div class="logo">
-            <div class="logo-text">
-                <span>Happy Paws</span><br>
-                PET CLINIC & SHOP
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">หน้าหลัก</a></li>
-                <li><a href="#">บริการของเรา</a></li>
-                <li><a href="#">สินค้าใน Shop</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
+        <h1>สพ.ญ. ธนวรรณ (Dr. Thanawan VET)</h1>
+        <p>สัตวแพทย์ผู้รักและใส่ใจเพื่อนสี่ขาของคุณ</p>
     </header>
 
-    <div class="profile-card">
-        <div class="profile-pic-container">
-            <img src="https://raw.githubusercontent.com/otammie/image-repo/main/vet-doctor.png" alt="สพ.ญ. วรดา เหล็กยัง">
-        </div>
+    <div class="container">
 
-        <div class="profile-info">
-            <span class="badge">คุณหมอเฉพาะทาง ประสบการณ์กว่า 7 ปี</span>
-            <h1>สพ.ญ. วรดา เหล็กยัง</h1>
-            <p style="color: var(--soft-brown); font-weight: bold; letter-spacing: 1px;">เลขที่ใบประกอบวิชาชีพ: 6650101419</p>
-            <p style="max-width: 600px; margin: 20px auto; font-size: 1.05em; font-style: italic;">
-                "ดูแลสัตว์เลี้ยงของคุณด้วยความรักและความเชี่ยวชาญ ครบจบในที่เดียว 
-                ทั้งการรักษาที่มีคุณภาพและสินค้าพรีเมียมสำหรับเพื่อนสี่ขา"
-            </p>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat-item"><b>7+ Years</b><span>ประสบการณ์</span></div>
-            <div class="stat-item"><b>15,000+</b><span>เคสที่สำเร็จ</span></div>
-            <div class="stat-item"><b>Premium</b><span>Products in Shop</span></div>
-        </div>
-
-        <div class="grid-content">
-            <div class="col">
-                <div class="section-title">🏥 Professional Services</div>
-                <ul class="list-item">
-                    <li><b>ศูนย์อายุรกรรมและศัลยกรรม:</b> รักษาและผ่าตัดด้วยมาตรฐานสากล</li>
-                    <li><b>ตรวจเช็คสุขภาพ:</b> วัคซีน โปรแกรมถ่ายพยาธิ และตรวจเลือด</li>
-                    <li><b>วินิจฉัยพิเศษ:</b> อัลตราซาวด์และตรวจหัวใจด้วยเทคนิคเฉพาะ</li>
-                    <li><b>Emergency Case:</b> พร้อมดูแลเคสฉุกเฉินตลอดเวลาทำการ</li>
-                </ul>
+        <section class="profile-section">
+            <img src="https://raw.githubusercontent.com/otammie/image-repo/main/vet-doctor-custom.png" alt="สพ.ญ. ธนวรรณ (Dr. Thanawan)">
+            <div class="profile-info">
+                <h2>ยินดีต้อนรับ</h2>
+                <p>ฉันชื่อ สพ.ญ. ธนวรรณ ฉันเป็นสัตวแพทย์ที่มีความมุ่งมั่นในการดูแลสุขภาพและความเป็นอยู่ที่ดีของสัตว์เลี้ยงทุกตัว เป้าหมายของฉันคือการให้บริการทางการแพทย์ที่มีคุณภาพด้วยความรักและเข้าใจ ทั้งนี้เพื่อความสุขของสัตว์เลี้ยงและเจ้าของ</p>
             </div>
+        </section>
 
-            <div class="col">
-                <div class="section-title">🛒 Happy Paws Shop</div>
-                <ul class="list-item">
-                    <li><b>Prescription Diet:</b> อาหารเฉพาะโรคคุณภาพสูง</li>
-                    <li><b>Grooming & Care:</b> ผลิตภัณฑ์ดูแลผิวหนังและขนสูตรอ่อนโยน</li>
-                    <li><b>Supplements:</b> วิตามินเสริมสร้างภูมิคุ้มกันและบำรุงข้อ</li>
-                    <li><b>Pet Accessories:</b> อุปกรณ์สำหรับสัตว์เลี้ยงคัดสรรโดยคุณหมอ</li>
-                </ul>
-            </div>
-        </div>
+        <section class="content-section">
+            <h3>เกี่ยวกับฉันและประสบการณ์</h3>
+            <p>ฉันมีความสนใจในด้านอายุรกรรมและศัลยกรรมสัตว์เล็ก และได้มีโอกาสดูแลเคสต่างๆ มากมาย ไม่ว่าจะเป็นการตรวจสุขภาพประจำปี การฉีดวัคซีน การรักษาโรคต่างๆ ไปจนถึงการผ่าตัดขั้นพื้นฐาน</p>
+            <p>ฉันเชื่อในความสำคัญของการสื่อสารระหว่างสัตวแพทย์และเจ้าของสัตว์เลี้ยง เพื่อร่วมกันวางแผนการรักษาที่ดีที่สุด</p>
+        </section>
 
-        <div class="contact-box">
-            <div class="contact-item">📍 <b>Happy Paws PET CLINIC & SHOP</b><br>สาขาใกล้บ้านคุณ</div>
-            <div class="contact-item">📞 <b>Contact Us</b><br>02-xxx-xxxx</div>
-            <div class="contact-item">💬 <b>Line ID</b><br>@HappyPawsClinic</div>
-        </div>
+        <section class="content-section">
+            <h3>บริการของเรา</h3>
+            <ul>
+                <li>ตรวจสุขภาพสัตว์เลี้ยงประจำปี และฉีดวัคซีน</li>
+                <li>การรักษาโรคทั่วไปในสัตว์เล็ก (สุนัข, แมว)</li>
+                <li>ให้คำปรึกษาด้านโภชนาการและการดูแลสัตว์เลี้ยง</li>
+                <li>บริการตรวจเลือด, ปัสสาวะ, และอัลตราซาวด์เบื้องต้น</li>
+                <li>ผ่าตัดขั้นพื้นฐาน เช่น ทำหมัน, ผ่าตัดก้อนเนื้อ</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>ติดต่อฉัน</h3>
+            <p>หากคุณมีคำถามหรือต้องการนัดหมาย สามารถติดต่อฉันได้ตามช่องทางต่างๆ ดังนี้</p>
+            <div>
+                <a href="mailto:vet.thanawan@email.com" class="contact-link">📧 vet.thanawan@email.com</a>
+                <span class="contact-link">📞 08X-XXX-XXXX (สำหรับนัดหมาย)</span>
+                </div>
+        </section>
+
     </div>
-    
-    <p style="text-align: center; margin-top: 30px; font-size: 0.85em; color: var(--soft-brown);">
-        © 2026 Happy Paws PET CLINIC & SHOP. All Rights Reserved.
-    </p>
-</div>
+
+    <footer>
+        <p>&copy; 2024 Dr. Thanawan VET. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
